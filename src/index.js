@@ -57,29 +57,45 @@ class Cinema {
         }
         return disponiveis;
     }
+
+    calcularValor(qntd) {
+        const valor = this.precoUnico * qntd
+        if (qntd >= 4) {
+            const desconto = valor * (10 / 100)
+            return valor - desconto;
+        }
+        return valor;
+    }
 }
 
 
-const cinema = new Cinema(6,5)
+const cinema = new Cinema(6, 5)
 console.log("Assentos disponíveis", cinema.assentosDisponiveis())
+console.log(cinema.calcularValor(2));  
+console.log(cinema.calcularValor(4));  
+console.log(cinema.calcularValor(6));  
 // console.log(cinema.assentos.size)
 
 // try {
-//     cinema.reservarAssento("F7");
-//     console.log(cinema.assentos.get("F7"));
+//     cinema.reservarAssento("B3");
+//     console.log("B3", cinema.assentos.get("B3"));
+    
 //     console.log("Assento reservado com sucesso!");
 // } catch (Error) {
 //     console.log(Error.message);
 // }
 
+// console.log("Assentos disponíveis", cinema.assentosDisponiveis());
+
 // try {
-//     cinema.cancelarAssento("F7");
-//     console.log(cinema.ocupado.get("F7"));
+//     cinema.cancelarAssento("B3");
+//     console.log("B3", cinema.assentos.get("B3"));
 //     console.log("Reserva cancelada com sucesso!");
 // } catch (Error) {
 //     console.log(Error.message);
 // }
 
+console.log("Assentos disponíveis", cinema.assentosDisponiveis());
 
 
 
