@@ -4,7 +4,6 @@ class Cinema {
         this.assentosPf = assentosPf;
         this.precoUnico = 50;
         this.assentos = this.criarAssento()
-        
     };
 
     criarAssento() {
@@ -34,17 +33,53 @@ class Cinema {
             throw new Error("Esse assento não existe!");
         }
     }
-}
-const cinema = new Cinema(6,7)
-console.log(cinema.assentos)
-console.log(cinema.assentos.size)
 
-try {
-    cinema.reservarAssento("F7");
-    console.log(cinema.assentos.get("F7"));
-    console.log("Assento reservado com sucesso!");
-} catch (Error) {
-    console.log(Error.message);
+    cancelarAssento(id) {
+        if (this.assentos.has(id) == true) {
+            const assento = this.assentos.get(id)
+            if (assento.ocupado == true) {
+                assento.ocupado = false;
+            } else {
+                throw new Error("Esse assento não está sendo ocupado")
+            }
+        } else {
+            throw new Error("Esse ssento não existe!");
+        }
+    }
+
+    assentosDisponiveis() {
+        const disponiveis = [];
+
+        for (const [id, assento] of this.assentos) {
+            if (assento.ocupado == false) {
+                disponiveis.push(id);
+            }
+        }
+        return disponiveis;
+    }
 }
+
+
+const cinema = new Cinema(6,5)
+console.log("Assentos disponíveis", cinema.assentosDisponiveis())
+// console.log(cinema.assentos.size)
+
+// try {
+//     cinema.reservarAssento("F7");
+//     console.log(cinema.assentos.get("F7"));
+//     console.log("Assento reservado com sucesso!");
+// } catch (Error) {
+//     console.log(Error.message);
+// }
+
+// try {
+//     cinema.cancelarAssento("F7");
+//     console.log(cinema.ocupado.get("F7"));
+//     console.log("Reserva cancelada com sucesso!");
+// } catch (Error) {
+//     console.log(Error.message);
+// }
+
+
 
 
