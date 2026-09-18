@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "name": "cinema_assentos",
+  "version": "1.0.0",
+  "description": "Este repositório tem como objetivo simular uma reserva em uma sala de cinema.",
+  "main": "demo.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pablo-Vinicius-Alves/Cinema_Assentos.git"
+  },
+  "keywords": [],
+  "author": "Pablo",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Pablo-Vinicius-Alves/Cinema_Assentos/issues"
+  },
+  "homepage": "https://github.com/Pablo-Vinicius-Alves/Cinema_Assentos#readme"
+}
